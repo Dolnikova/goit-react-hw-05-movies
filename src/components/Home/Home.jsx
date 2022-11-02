@@ -1,6 +1,6 @@
 import { fetchTrending } from 'api';
+import { Link } from 'components/Movies/Movie.style';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Box, Item, Main, Poster, Title } from './Home.style';
 
 const Home = () => {
@@ -17,10 +17,10 @@ const Home = () => {
       <Box>
         {movies.map(({ title, id, poster_path }) => (
           <Item key={id}>
-            <Poster
-              src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-            ></Poster>
-            <Link to={`movies/${id}`}>{title}</Link>
+            <Link to={`movies/${id}`}>
+              <Poster src={`https://image.tmdb.org/t/p/w500/${poster_path}`} />
+              {title}
+            </Link>
           </Item>
         ))}
       </Box>

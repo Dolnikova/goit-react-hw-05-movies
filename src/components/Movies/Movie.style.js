@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { TextColor } from 'utilities/var';
 
@@ -38,4 +39,11 @@ export const Box = styled.ul`
   color: ${TextColor};
   display: flex;
   flex-wrap: wrap;
+`;
+export const Link = styled(NavLink)`
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

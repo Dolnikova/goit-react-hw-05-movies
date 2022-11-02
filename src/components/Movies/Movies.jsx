@@ -1,15 +1,16 @@
 import { fetchMovies } from 'api';
 import React, { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Box, InputForm, Item, Poster } from './Movie.style';
+import { Box, InputForm, Item, Link, Poster } from './Movie.style';
 import noPoster from '../../images/no_poster.jpg';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState('');
+  const location = useLocation();
 
   const handleChange = e => {
     setQuery(e.target.value);
@@ -47,14 +48,19 @@ const Movies = () => {
           {movies.map(({ title, id, poster_path }) => {
             return (
               <Item key={id}>
-                <Poster
-                  src={
-                    poster_path
-                      ? `https://image.tmdb.org/t/p/w200/${poster_path}`
-                      : noPoster
-                  }
-                ></Poster>
-                <Link to={`${id}`}>{title}</Link>
+                <Link
+                  to={`${id}`}
+                  state={{ from: location.pathname + location.search }}
+                >
+                  <Poster
+                    src={
+                      poster_path
+                        ? `https://image.tmdb.org/t/p/w200/${poster_path}`
+                        : noPoster
+                    }
+                  />
+                  {title}
+                </Link>
               </Item>
             );
           })}

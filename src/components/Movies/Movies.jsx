@@ -30,7 +30,9 @@ const Movies = () => {
     if (searchParams.get('query') !== null) {
       const newQuery = searchParams.get('query');
       fetchMovies(newQuery).then(results => {
-        setMovies(results.results);
+        results.results.length
+          ? setMovies(results.results)
+          : toast.error('Enter a valid movie title');
         setQuery('');
       });
     }

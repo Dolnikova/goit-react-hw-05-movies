@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { Gradient, secondTextColor } from 'utilities/var';
 
 export const Container = styled.div`
   max-width: 960px;
@@ -8,13 +9,12 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
+  background-color: ${Gradient};
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 8px 0;
-  margin-bottom: 16px;
-  //   border-bottom: 1px solid black;
+  padding: 18px 0;
 
   > nav {
     display: flex;
@@ -27,10 +27,9 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   color: black;
   font-weight: 500;
-
+  font-size: 20px;
   &.active {
-    color: orangered;
-    // background-color: orangered;
+    color: ${secondTextColor};
   }
 `;
 export const NavigationList = styled.ul`

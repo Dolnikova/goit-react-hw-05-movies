@@ -8,7 +8,7 @@ import {
   useNavigate,
   useParams,
 } from 'react-router-dom';
-import { Button } from './MovieDetails.styled';
+import { BoxInfo, BoxMovie, Button, DeteilInfo } from './MovieDetails.styled';
 
 const MovieDetails = () => {
   const [details, setDetails] = useState(null);
@@ -44,7 +44,7 @@ const MovieDetails = () => {
   return (
     <>
       {details && (
-        <>
+        <BoxMovie>
           <Button
             onClick={() => {
               navigate(location?.state?.from ?? '/');
@@ -53,43 +53,43 @@ const MovieDetails = () => {
             Go back
           </Button>
           <section>
-            <img
-              src={
-                details.poster
-                  ? `https://image.tmdb.org/t/p/w500/${details.poster}`
-                  : noPoster
-              }
-              alt={details.title}
-            />
+            <BoxInfo>
+              <img
+                src={
+                  details.poster
+                    ? `https://image.tmdb.org/t/p/w300/${details.poster}`
+                    : noPoster
+                }
+                alt={details.title}
+              />
+              <DeteilInfo>
+                <div>
+                  <h2>{details.title}</h2>
+                  <h3>Votes: {details.vote}</h3>
+                </div>
+                <h3>Date of release: {details.releaseDate}</h3>
+                <h3>Overwiew:</h3>
+                <p>{details.overview}</p>
+                <h3>Genres:</h3>
+                <p> {genresInfo}</p>
+              </DeteilInfo>
+            </BoxInfo>
             <div>
-              <div>
-                <h2>{details.title}</h2>
-                <h3>Votes: {details.vote}</h3>
-              </div>
-              <h3>Date of release: {details.releaseDate}</h3>
-              <h3>Overwiew:</h3>
-              <p>{details.overview}</p>
-              <h3>Genres:</h3>
-              <p> {genresInfo}</p>
+              <p>Additional info</p>
             </div>
-            <div>
-              <div>
-                <p>Additional info</p>
-              </div>
 
-              <ul>
-                <li>
-                  <Link to="cast" state={location.state}>
-                    Cast
-                  </Link>
-                </li>
-                <li>
-                  <Link to="reviews">Reviews</Link>
-                </li>
-              </ul>
-            </div>
+            <ul>
+              <li>
+                <Link to="cast" state={location.state}>
+                  Cast
+                </Link>
+              </li>
+              <li>
+                <Link to="reviews">Reviews</Link>
+              </li>
+            </ul>
           </section>
-        </>
+        </BoxMovie>
       )}
       <Outlet />
     </>

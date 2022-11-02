@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Box, InputForm, Item, Poster } from './Movie.style';
+import noPoster from '../../images/no_poster.jpg';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -36,20 +38,27 @@ const Movies = () => {
   return (
     <>
       <ToastContainer />
-      <form onSubmit={handleSubmit}>
+      <InputForm onSubmit={handleSubmit}>
         <input type="text" name="query" value={query} onChange={handleChange} />
         <button type="submit">Search</button>
-      </form>
+      </InputForm>
       {!!movies.length && (
-        <ul>
-          {movies.map(({ title, id }) => {
+        <Box>
+          {movies.map(({ title, id, poster_path }) => {
             return (
-              <li key={id}>
+              <Item key={id}>
+                <Poster
+                  src={
+                    poster_path
+                      ? `https://image.tmdb.org/t/p/w200/${poster_path}`
+                      : noPoster
+                  }
+                ></Poster>
                 <Link to={`${id}`}>{title}</Link>
-              </li>
+              </Item>
             );
           })}
-        </ul>
+        </Box>
       )}
     </>
   );

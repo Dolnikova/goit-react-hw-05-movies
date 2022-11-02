@@ -57,7 +57,7 @@ const MovieDetails = () => {
               <img
                 src={
                   details.poster
-                    ? `https://image.tmdb.org/t/p/w300/${details.poster}`
+                    ? `https://image.tmdb.org/t/p/w200/${details.poster}`
                     : noPoster
                 }
                 alt={details.title}

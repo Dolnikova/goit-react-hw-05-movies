@@ -6,10 +6,10 @@ export const InputForm = styled.form`
   margin-bottom: 10px;
 `;
 export const Poster = styled.img`
-  width: 450px;
+  width: 350px;
   margin-bottom: 5px;
   @media (min-width: 768px) {
-    width: 350px;
+    width: 250px;
   }
 `;
 export const Item = styled.li`

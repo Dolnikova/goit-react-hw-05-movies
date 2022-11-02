@@ -30,11 +30,11 @@ const Cast = () => {
           <li key={id}>
             {photo ? (
               <img
-                src={`https://image.tmdb.org/t/p/w300/${photo}`}
+                src={`https://image.tmdb.org/t/p/w200/${photo}`}
                 alt={name}
               />
             ) : (
-              <img src={noActor} alt={name} width={300} height={450} />
+              <img src={noActor} alt={name} width={200} height={450} />
             )}
           </li>
         ))}

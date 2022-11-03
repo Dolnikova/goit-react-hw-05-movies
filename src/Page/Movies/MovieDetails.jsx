@@ -1,4 +1,4 @@
-import { fetchMovieDetails } from 'api';
+import { fetchMovieDetails } from 'services/api';
 import React, { useEffect, useState } from 'react';
 import noPoster from '../../images/no_poster.jpg';
 import {

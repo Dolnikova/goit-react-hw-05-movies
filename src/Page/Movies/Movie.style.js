@@ -1,15 +1,17 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { TextColor, MainBgColor } from 'utilities/var';
+import { TextColor } from 'styles/vars';
 
-export const Title = styled.h1`
-  display: flex;
-  justify-content: space-around;
-  color: ${TextColor};
-  font-size: 35px;
-  padding: 20px 0 20px 0;
+export const InputForm = styled.form`
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
-export const Main = styled.main`
-  background-color: ${MainBgColor};
+export const Poster = styled.img`
+  width: 350px;
+  margin-bottom: 5px;
+  @media (min-width: 768px) {
+    width: 250px;
+  }
 `;
 export const Item = styled.li`
   flex-direction: column;
@@ -33,15 +35,15 @@ export const Item = styled.li`
     width: calc((100% - 6 * 10px) / 3);
   }
 `;
-export const Poster = styled.img`
-  width: 450px;
-  margin-bottom: 5px;
-  @media (min-width: 768px) {
-    width: 350px;
-  }
-`;
 export const Box = styled.ul`
   color: ${TextColor};
   display: flex;
   flex-wrap: wrap;
+`;
+export const Link = styled(NavLink)`
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

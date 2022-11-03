@@ -1,5 +1,5 @@
-import { fetchTrending } from 'api';
-import { Link } from 'components/Movies/Movie.style';
+import { fetchTrending } from 'services/api';
+import { Link } from 'Page/Movies/Movie.style';
 import { useEffect, useState } from 'react';
 import { Box, Item, Main, Poster, Title } from './Home.style';
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { MainBgColor } from 'utilities/var';
+import { MainBgColor } from 'styles/vars';
 
 // import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 export const Button = styled.button`

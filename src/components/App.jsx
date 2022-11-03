@@ -2,11 +2,11 @@ import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { Loader } from './Loader/Loader';
-const  Movies  = lazy(() => import('./Movies/Movies'));
-const  MovieDetails  = lazy(() => import('./Movies/MovieDetails'));
-const  Cast  = lazy(() => import('./Movies/Cast'));
-const  Reviews  = lazy(() => import('./Movies/Reviews'));
-const Home = lazy(() => import('./Home/Home'));
+const Movies = lazy(() => import('../Page/Movies/Movies'));
+const MovieDetails = lazy(() => import('../Page/Movies/MovieDetails'));
+const Cast = lazy(() => import('./Cast/Cast'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
+const Home = lazy(() => import('../Page/Home/Home'));
 
 export const App = () => {
   return (

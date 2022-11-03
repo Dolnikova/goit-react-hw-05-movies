@@ -1,4 +1,4 @@
-import { fetchMovieCast } from 'api';
+import { fetchMovieCast } from 'services/api';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import noActor from '../../images/icon-actor.png';

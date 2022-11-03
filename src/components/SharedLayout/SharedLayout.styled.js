@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { Gradient, secondTextColor } from 'utilities/var';
+import { Gradient, secondTextColor } from 'styles/vars';
 
 export const Container = styled.div`
   max-width: 960px;

@@ -1,4 +1,4 @@
-import { fetchMovies } from 'api';
+import { fetchMovies } from 'services/api';
 import React, { useState, useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
